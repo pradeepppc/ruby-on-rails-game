@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   delete 'logout' , to: 'sessions#destroy'
   post 'login' , to: 'sessions#create'
   root 'pages#index'
-  get 'user/delete' , to: 'user#destroy'
+  get 'destroy' , to: 'user#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
