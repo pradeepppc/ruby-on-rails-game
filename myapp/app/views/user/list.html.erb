@@ -1,0 +1,32 @@
+<% if @users.blank?  %>
+<div class="container">
+	<p> There are no users in the system </p>
+
+</div>
+<% else %>
+<div class="container">
+	<p> These are the following users </p>
+</div>
+<div class="row">
+	<div class="col-md-6 col md-offset-3">
+		<table class="table">
+			<tr>
+				<th>NAME</th>
+				<th>EMAIL</th>
+				<th>ID</th>
+			</tr>
+			<% @users.each do |u| %>
+			<tr>
+				<td><%= u.name %></td>
+				<td><%= u.email %></td>
+				<td><%= u.id %></td>
+				<td> <%= link_to 'delete user', { :action => 'destroy' , :id => u.id }%> </td>
+			</tr>
+			<% end %> 
+
+		</table>
+
+	</div>
+	
+</div>
+<% end %>
